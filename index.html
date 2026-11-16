@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio</title>
+    <style>
+        body {
+            font-family: Aria, sans-serif;
+            background: #10111b;
+            color: white;
+            padding: 24px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        textarea,
+        select,
+        button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 13px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        button {
+            background: #7957ff;
+            color: white;
+            border: 0;
+            cursor: pointer;
+        }
+
+        a {
+            color: #b7a6ff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>AI Studio</h1>
+    <p>Turn your text into spoken audio </p>
+
+    <textarea name="" id="text" placeholder="Type your text here..."></textarea>
+
+    <select name="" id="voices">
+        <option value="">loading voices</option>
+    </select>
+
+    <button id="speak">Generate Voice</button>
+    <button id="stop">Stop Speaking</button>
+
+    <p id="status" aria-live="polite"></p>
+    <audio id="player" controls></audio>
+    <p id="downloadArea"></p>
+
+    <script>
+        const textBox = document.getElementById("text");
+        const voiceSelect = document.getElementById("voices");
+        const status = document.getElementById("status");
+        const player = document.getElementById("player");
+        const downloadArea = document.getElementById("downloadArea");
+
+        let audioUrl = null;
+
+        function loadVoices() {
+            const voices = speechSynthesis.getVoices();
+            voiceSelect.innerHTML = "";
+
+            voices.forEach((voice, index) => {
+                const option = document.createElement("option");
+                option.value = index;
+                option.textContent = voice.name + " (" + voice.lang + ")";
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        loadVoices();
+        speechSynthesis.onvoiceschanged = loadVoices;
+        document.getElementById("speak").onclick = () => {
+            const text = textBox.value.trim();
+
+            if (!text) {
+                status.textContent = "Please enter some text.";
+                return;
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voice = speechSynthesis.getVoices()[
+                Number(voiceSelect.value)
+            ];
+
+            if (voice) utterance.voice = voice;
+
+            utterance.obstart = () => {
+                status.textContent = "speaking...";
+            };
+            utterance.onend = () => {
+                status.textContent = "Finished. This demo speaks but does not export audio.";
+            };
+            utterance.onerror = () => {
+                status.textContent = "Speech failed. Try another voice.";
+            };
+
+            speechSynthesis.cancel();
+            speechSynthesis.speak(utterance);
+        };
+
+        document.getElementById("stop").onclick = () => {
+            speechSynthesis.cancel();
+            status.textContent = "Speech stopped.";
+        }
+    </script>
+</body>
+
+</html>

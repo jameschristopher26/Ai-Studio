@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA Noir Absolu — The Masterpiece of Scent</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appleDark: '#000000',
+                        appleGray: '#1d1d1f',
+                        appleText: '#f5f5f7',
+                        gold: '#D4AF37'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-appleDark text-appleText font-sans selection:bg-gold selection:text-black antialiased">
+
+    <!-- Apple-style Global Nav -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#000000]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-xs tracking-wide text-white/80">
+            <a href="#" class="font-serif tracking-[0.2em] text-gold font-medium text-sm">AURELIA</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#overview" class="hover:text-gold transition">Overview</a>
+                <a href="#design" class="hover:text-gold transition">Craftsmanship</a>
+                <a href="#notes" class="hover:text-gold transition">Olfactory Notes</a>
+                <a href="#atelier" class="hover:text-gold transition">Personalize</a>
+            </div>
+            <button class="bg-white text-black px-3 py-1 rounded-full font-medium hover:bg-gold hover:text-white transition duration-300">
+                Buy
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sticky Sub-Nav (Apple Product Bar) -->
+    <div class="sticky top-12 z-40 bg-[#1d1d1f]/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <span class="font-serif text-lg tracking-wider text-white">Noir Absolu</span>
+            <div class="flex items-center gap-6 text-xs">
+                <span class="text-white/60 hidden sm:inline">Extrait de Parfum</span>
+                <a href="#purchase" class="bg-gold text-black px-4 py-1.5 rounded-full font-medium hover:bg-[#c29d30] transition">Pre-order</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <span class="text-xs uppercase tracking-[0.4em] text-gold mb-3 font-light">New Release</span>
+        <h1 class="text-5xl md:text-7xl font-serif font-light tracking-wide max-w-3xl leading-tight">
+            Light in the dark. <br/><span class="text-white/50">Captured in crystal.</span>
+        </h1>
+        <p class="text-sm md:text-base text-white/60 max-w-xl mt-4 font-light leading-relaxed">
+            A profound study in smoky wood accords and molten golden amber. Hand-crafted in Grasse.
+        </p>
+        <div class="mt-8 flex gap-6 text-sm">
+            <a href="#purchase" class="text-gold hover:underline tracking-wider uppercase text-xs font-medium flex items-center gap-1">
+                Discover configuration &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive 3D Cinematic Viewer Section (Apple Product Showcase) -->
+    <section id="design" class="relative py-24 bg-gradient-to-b from-appleDark via-[#0d0d0f] to-appleDark flex flex-col items-center">
+        <div class="text-center px-6 mb-12">
+            <h2 class="text-3xl md:text-5xl font-serif font-light tracking-wide">Designed to absolute perfection.</h2>
+            <p class="text-white/50 text-sm mt-3">Rotate and inspect the heavy obsidian glass flacon from every angle.</p>
+        </div>
+
+        <!-- 3D Canvas Container -->
+        <div id="canvas-container" class="w-full max-w-5xl h-[600px] relative flex items-center justify-center cursor-grab active:cursor-grabbing">
+            <div class="absolute bottom-6 z-10 text-[11px] tracking-widest text-white/40 uppercase pointer-events-none flex items-center gap-2">
+                <span>🔄 Click & Drag to Rotate Flacon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Storytelling (Apple Bento Style) -->
+    <section class="max-w-6xl mx-auto px-6 py-24 space-y-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-serif font-light">The Anatomy of Luxury.</h2>
+            <p class="text-white/50 text-sm mt-2">Every millimeter engineered for an unmatched tactile and sensory experience.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Bento Box 1 -->
+            <div class="bg-appleGray p-8 rounded-3xl flex flex-col justify-between border border-white/5 relative overflow-hidden group">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold">Cap & Collar</span>
+                    <h3 class="text-2xl font-serif font-light mt-2">Weighted Gold Plating</h3>
+                    <p class="text-white/60 text-xs mt-3 leading-relaxed">Fitted with a precision-machined magnetic closure cap that satisfyingly clicks into place with absolute alignment.</p>
+                </div>
+                <div class="mt-12 h-32 bg-gradient-to-tr from-black/40 to-gold/10 rounded-2xl flex items-center justify-center border border-white/5">
+                    <span class="text-2xl">✨</span>
+                </div>
+            </div>
+
+            <!-- Bento Box 2 -->
+            <div class="bg-appleGray p-8 rounded-3xl flex flex-col justify-between border border-white/5 relative overflow-hidden group">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold">Flacon Glass</span>
+                    <h3 class="text-2xl font-serif font-light mt-2">Obsidian Crystal</h3>
+                    <p class="text-white/60 text-xs mt-3 leading-relaxed">Cast from heavy-walled optical glass, absorbing harsh external light while letting the golden nectar glow from within.</p>
+                </div>
+                <div class="mt-12 h-32 bg-gradient-to-tr from-black/40 to-[#222] rounded-2xl flex items-center justify-center border border-white/5">
+                    <span class="text-2xl">🔮</span>
+                </div>
+            </div>
+
+            <!-- Bento Box 3 -->
+            <div class="bg-appleGray p-8 rounded-3xl flex flex-col justify-between border border-white/5 relative overflow-hidden group">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold">Personalization</span>
+                    <h3 class="text-2xl font-serif font-light mt-2">Gold-Foil Engraving</h3>
+                    <p class="text-white/60 text-xs mt-3 leading-relaxed">Your personal signature or initials hand-embossed directly onto the faceplate with genuine 24k gold leaf.</p>
+                </div>
+                <div class="mt-12 h-32 bg-gradient-to-tr from-black/40 to-gold/10 rounded-2xl flex items-center justify-center border border-white/5">
+                    <span class="text-2xl">✍️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Configuration Section -->
+    <section id="purchase" class="max-w-4xl mx-auto px-6 py-24 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-xs uppercase tracking-[0.3em] text-gold">AURELIA Noir Absolu</span>
+            <h2 class="text-4xl font-serif font-light mt-2">Configure your flacon.</h2>
+            <p class="text-white/60 text-xs mt-4 leading-relaxed">
+                Each flacon is individually numbered and accompanied by a certificate of authenticity signed by our master perfumer in Grasse.
+            </p>
+
+            <div class="mt-8 space-y-6">
+                <div>
+                    <label class="text-xs uppercase tracking-widest text-white/50 block mb-2">Select Capacity</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="selectSize('50ml', 240)" id="size-50ml" class="py-3 text-xs tracking-widest uppercase border border-white/20 rounded-xl text-white/70 hover:border-gold transition">
+                            50ml / $240
+                        </button>
+                        <button onclick="selectSize('100ml', 340)" id="size-100ml" class="py-3 text-xs tracking-widest uppercase border border-gold bg-gold/10 rounded-xl text-gold transition">
+                            100ml / $340
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs uppercase tracking-widest text-white/50 block mb-2">Complimentary Engraving</label>
+                    <input type="text" id="engraving-input" maxlength="12" placeholder="Enter Initials (Max 12 chars)" class="w-full bg-appleGray border border-white/10 rounded-xl px-4 py-3 text-sm tracking-widest uppercase focus:outline-none focus:border-gold transition text-white">
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-appleGray p-8 rounded-3xl border border-white/10 space-y-6 flex flex-col justify-between">
+            <div>
+                <h3 class="text-xl font-serif font-light">Order Summary</h3>
+                <div class="mt-4 space-y-3 text-xs text-white/70 border-b border-white/10 pb-6">
+                    <div class="flex justify-between"><span>Edition</span> <span class="text-white">Noir Absolu (Extrait)</span></div>
+                    <div class="flex justify-between"><span>Size</span> <span id="summary-size" class="text-white">100ml</span></div>
+                    <div class="flex justify-between"><span>Shipping</span> <span class="text-gold">Complimentary Express</span></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-sm text-white/60">Total</span>
+                    <span id="summary-price" class="text-2xl font-serif text-gold">$340.00</span>
+                </div>
+                <button onclick="addToBag()" class="w-full bg-gold text-black uppercase tracking-[0.15em] text-xs py-4 rounded-full font-medium hover:bg-[#c29d30] transition duration-300">
+                    Add to Bag
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apple-style Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 text-center text-xs text-white/40 space-y-3">
+        <p>Copyright © 2026 AURELIA Inc. All rights reserved.</p>
+        <p>Privacy Policy • Terms of Use • Sales Policy • Legal • Site Map</p>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

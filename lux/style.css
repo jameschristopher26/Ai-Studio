@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Smooth Scrolling & Custom Selection */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #D4AF37;
+    color: #000000;
+}

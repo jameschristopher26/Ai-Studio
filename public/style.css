@@ -1,0 +1,148 @@
+*{box-sizing: border-box;}
+:root {
+    --bg: #0b1020;
+    --panel: #151c2e;
+    --text: #f4f6ff;
+    --muted: #a5afc5;
+    --purple: #8b78ff;
+}
+
+body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, Arial, sans-serif;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    border-bottom: 1px solid #273047;
+}
+
+.logo{font-weight: 800; font-size: 19px;}
+.status, .eyebrow, .hint, .meta, footer {color: var(--muted);} 
+.status{font-size: 12px; }
+
+main {width: min(100% - 28px, 650px); margin: auto;}
+
+.hero {padding: 38px 0 24px;}
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+h1{
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.1;
+}
+
+h1 span{
+    color: var(--purple);
+
+}
+
+.hero > p:last-child{
+    color: var(--muted);
+}
+
+.panel, .note{
+    background: var(--panel);
+    border: 1px solid #29334b;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+label{
+    display: block;
+    font-weight: 650;
+    margin: 14px 0 9px;
+}
+
+textarea, select{
+    display: block;
+    width: 100%;
+    border: 1px solid #39435c;
+    border-radius: 10px;
+    background: #0e1526;
+    color: white;
+    padding: 13px;
+    font: inherit;
+}
+
+textarea{min-height: 160px; resize: vertical;}
+
+.meta{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+button, .download {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 750;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary, .download {
+    background: var(--purple);
+    color: white;
+}
+
+.primary:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.text-button{
+    width: auto;
+    margin: 0;
+    padding: 4px;
+    background: transparent;
+    color: #c1b7ff;
+}
+
+.hint, #message, .note p{
+    font-size: 13px;
+}
+
+#message:empty {
+    display: none;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.note p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+footer{
+    text-align: center;
+    padding: 25px 12px;
+    font-size: 12px;
+}
+
+@media (min-width: 700px){
+    .hero {
+        padding-top: 55px;
+    }
+    .panel{
+        padding: 28px;
+    }
+
+}

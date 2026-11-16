@@ -1,0 +1,19 @@
+{
+    "name": "ai-studio",
+    "version": "1.0.0",
+    "description": "A beginner text-to-speech PWA",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "@react-three/drei": "^10.7.9",
+        "@react-three/fiber": "^9.8.2",
+        "clsx": "^2.1.1",
+        "express": "^5.1.0",
+        "framer-motion": "^14.12.0",
+        "lucide-react": "^1.72.0",
+        "tailwind-merge": "^3.7.0",
+        "three": "^0.187.0"
+    }
+}
